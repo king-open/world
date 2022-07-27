@@ -8,15 +8,14 @@
 import { ref } from 'vue'
 export default{
   props:{
-    value:Boolean
+    value:Boolean,
   },
   setup(props,context){
-    const checked = ref(false)
     const toggle = ()=>{
       // this.$emit()
       context.emit('input',!props.value)
     }
-    return{checked,toggle}
+    return{toggle}
   }
 }
 
