@@ -82,17 +82,15 @@ $radius: 4px;
       background: darken(white, 5%);;
     }
   }
-    &.sky-theme-button{
-    &.sky-size-big{
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px
-    }
-    &.sky-size-small{
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
-}
+   &.sky-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.sky-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
 }
 </style>
