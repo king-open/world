@@ -1,17 +1,32 @@
 <template>
-  <button class="sky-button" :class="{ [`sky-theme-${theme}`]: theme }">
+  <button class="sky-button" :class="classes">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
+import { computed } from 'vue';
 export default {
   props: {
     theme: {
       type: String,
       default: "button",
     },
+    size:{
+      type:String,
+      default:"normal",
+    },
   },
+  setup(props){
+    const {theme,size} = props;
+    const classes = computed(()=>{
+      return {
+        [`theme-${theme}`]:theme,
+        [`size-${size}`]:size,
+      }
+    })
+    return{classes}
+  }
   
 };
 </script>
@@ -62,9 +77,22 @@ $radius: 4px;
     border-color: transparent;
     box-shadow: none;
     color: inherit;
-    &:hover,&:focus{
+    &:hover,
+    &:focus{
       background: darken(white, 5%);;
     }
   }
+    &.sky-theme-button{
+    &.sky-size-big{
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px
+    }
+    &.sky-size-small{
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
+    }
+}
 }
 </style>
