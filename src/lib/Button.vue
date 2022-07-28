@@ -1,19 +1,19 @@
 <template>
-  <div :size="size">
-    <button v-bind="reset" >
-      <slot />
-    </button>
-  </div>
+  <button class="sky-button"
+  :class="{[`theme-${theme}`]:theme}">
+  <slot />
+  </button>
 </template>
 
 <script lang="ts">
 export default{
-  inheritAttrs:false,
-  props:{},
-  setup(props,context){
-    const {size,...reset} = context.attrs;
-    return {size,reset}
-  }
+  props:{
+    theme:{
+      type:String,
+      default:'button'
+    }
+    
+  },
 
 }
 </script>
